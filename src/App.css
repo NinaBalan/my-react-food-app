@@ -20,11 +20,10 @@ html {
 }
 
 h1 {
-  font-size: 8rem;
+  font-size: 7rem;
   letter-spacing: 0.1rem;
   font-style: normal;
   color: #4791b3;
-  /*text-shadow: 0 0.2rem 5rem rgb(119, 115, 115);*/
   text-transform: uppercase;
   margin: 4rem 0;
 }

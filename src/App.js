@@ -7,6 +7,7 @@ import './App.css';
 import Recipe from './components/Recipe';
 import Alert from './components/Alert';
 
+
 function App() {
 
   const [query,setQuery] = useState("");
@@ -21,7 +22,7 @@ function App() {
     if (query !== "") {
       const result = await Axios.get(url);
       if (!result.data.more) {
-        return setAlert("No food with such name");
+        return setAlert("No recipe with such name");
       }
       console.log(result);
       setRecipes(result.data.hits);
@@ -42,16 +43,16 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>My Food Searching App</h1>
+      <h1>My Recipe Searching App</h1>
+      <div></div>
       <form onSubmit={onSubmit} className="search-form">
         {alert !== "" && <Alert alert={alert} />}
         <input 
-          type="text" 
-          placeholder="query" 
+          type="text"  
           onChange={onChange} 
           value={query} 
           autoComplete="off"
-          placeholder="Search Food"
+          placeholder="Search Recipe"
         />
         <input type="submit" value="search" />
       </form>
